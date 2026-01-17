@@ -144,6 +144,7 @@ button:hover {
   border: none;
   font-weight: 700;
   cursor: pointer;
+  border-radius: 20px;
 }
 
 /* IMAGEM DIREITA */
@@ -195,7 +196,7 @@ button:hover {
   .hero-content {
     flex-direction: column;
     gap: 40px;
-    padding: 18vh 16px 40px;
+    padding: 10vh 16px 40px;
     margin: 0 auto;
     text-align: center;
   }
