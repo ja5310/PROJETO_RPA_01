@@ -229,7 +229,7 @@ button:hover {
 
   /* IMAGEM */
   .hero-left img {
-    max-height: 260px;
+    max-height: 140px;
     width: 100%;
     object-fit: contain;
   }
