@@ -1,0 +1,297 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+}
+
+/* BACKGROUND */
+.background-rpa {
+  width: 100vw;
+  height: 100vh;
+  background-image: url("./assets/fundo01.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+/* HEADER */
+.header {
+  position: absolute;
+  top: 18px;
+  left: 0;
+  width: 100%;
+  height: 10vh;
+  /* background-color: #f9f9f9; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  z-index: 1000;
+}
+
+.logo {
+  height: 60px;
+  top: 30px;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 23px;
+}
+
+.link-header {
+  font-size: 20px;
+  font-weight: 600;
+  color: #ffffff;
+  text-decoration: none;
+}
+.chosen_link {
+  color: #f55a00;
+  font-size: 20px;
+  font-weight: 600;
+  text-decoration: none;
+}
+.link-header:hover {
+  color: #1ac2ff;
+}
+
+.button-header {
+  background: #006fb9;
+  border-radius: 20px;
+  width: 130px;
+  height: 41px;
+  border: none;
+  font-size: 16px;
+  color: #fff;
+  cursor: pointer;
+}
+
+button:hover {
+  color: #1ac2ff;
+  background: #e4f5f9;
+}
+
+/* HERO */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* 🔥 OVERLAY (ACRESCENTADO) */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(10, 10, 40, 0.95) 0%,
+    rgba(10, 10, 40, 0.85) 50%,
+    rgba(10, 10, 40, 0.6) 100%
+  );
+  z-index: 1;
+}
+
+/* CONTEÚDO */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 5vh auto;
+  padding: 15vh 2vw 0;
+  gap: 166px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* TEXTO ESQUERDA */
+.hero-right {
+  max-width: 550px;
+  color: #fff;
+}
+
+.hero-tag {
+  color: #f55a00;
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-size: 14px;
+}
+
+.hero-right h1 {
+  font-size: 48px;
+  line-height: 1.2;
+  margin: 20px 0;
+}
+
+.hero-right p {
+  font-size: 16px;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+.hero-btn {
+  margin-top: 30px;
+  padding: 14px 32px;
+  background: #f55a00;
+  border: none;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* IMAGEM DIREITA */
+.hero-left img {
+  max-height: 400px;
+}
+
+/* =========================
+   MOBILE (até 768px)
+========================= */
+@media (max-width: 768px) {
+  /* BACKGROUND */
+  .background-rpa {
+    height: auto;
+    min-height: 100vh;
+  }
+
+  /* HEADER */
+  .header {
+    height: auto;
+    padding: 10px 16px;
+    justify-content: space-between;
+  }
+
+  .logo {
+    height: 45px;
+  }
+
+  .header-right {
+    gap: 12px;
+  }
+
+  .link-header,
+  .chosen_link {
+    font-size: 14px;
+  }
+
+  .button-header {
+    width: 110px;
+    height: 36px;
+    font-size: 14px;
+  }
+
+  /* HERO */
+  .hero {
+    min-height: auto;
+  }
+
+  .hero-content {
+    flex-direction: column;
+    gap: 40px;
+    padding: 18vh 16px 40px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  /* TEXTO */
+  .hero-right {
+    max-width: 100%;
+  }
+
+  .hero-tag {
+    font-size: 12px;
+  }
+
+  .hero-right h1 {
+    font-size: 32px;
+    line-height: 1.25;
+  }
+
+  .hero-right p {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .hero-btn {
+    width: 100%;
+    max-width: 280px;
+    margin: 24px auto 0;
+    padding: 14px 0;
+    border-radius: 25px;
+  }
+
+  /* IMAGEM */
+  .hero-left img {
+    max-height: 260px;
+    width: 100%;
+    object-fit: contain;
+  }
+}
+/* =========================
+   MENU MOBILE
+========================= */
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+.menu-toggle span {
+  width: 28px;
+  height: 3px;
+  background: #ffffff;
+  border-radius: 2px;
+}
+
+/* MENU MOBILE */
+.menu-mobile {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 75%;
+  height: 100vh;
+  background: rgba(10, 10, 40, 0.98);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 100px 30px;
+  transition: right 0.3s ease;
+  z-index: 1050;
+}
+
+.menu-mobile a {
+  color: #ffffff;
+  font-size: 18px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.menu-mobile button {
+  margin-top: 20px;
+}
+
+/* MENU ABERTO */
+.menu-mobile.active {
+  right: 0;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .header-right {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+}

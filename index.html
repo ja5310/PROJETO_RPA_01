@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RPA Metalúrgica e Montagem</title>
+
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="background-rpa">
+
+      <header class="header">
+       
+
+        <nav class="header-right">
+          <a href="#Inicio" class="chosen_link">Home</a>
+          <a href="#Missao" class="link-header">Missão</a>
+          <a href="#Servicos" class="link-header">Serviços</a>
+          <a href="#Contato" class="link-header">Contato</a>
+          <button class="button-header">Login</button>
+        </nav>
+
+         <!-- BOTÃO HAMBÚRGUER (MOBILE) -->
+  <div class="menu-toggle" id="menu-toggle">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <!-- MENU MOBILE -->
+  <nav class="menu-mobile" id="menu-mobile">
+    <a href="#Inicio">Home</a>
+    <a href="#Missao">Missão</a>
+    <a href="#Servicos">Serviços</a>
+    <a href="#Contato">Contato</a>
+    <button class="button-header">Login</button>
+  </nav>
+      </header>
+
+      <section class="hero">
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+            <div class="hero-left"><img src="./assets/Logo.png" alt="Logo" class="hero-left img"></div>
+          <div class="hero-right">
+        
+            <h1>
+  Soluções completas <br />
+  em serviços <br />
+  metalúrgicos
+</h1>
+
+<p>
+  Atuamos com montagens eletromecânicas, caldeiraria,
+  manutenção industrial, pintura e locação de ferramentas,
+  entregando qualidade, segurança e eficiência em cada projeto.
+</p>
+
+
+            <button class="hero-btn">CADASTRE-SE</button>
+          </div>
+
+    
+      </section>
+
+    </div>
+    <script>
+  const toggle = document.getElementById("menu-toggle");
+  const menu = document.getElementById("menu-mobile");
+
+  toggle.addEventListener("click", () => {
+    menu.classList.toggle("active");
+  });
+</script>
+
+  </body>
+</html>
