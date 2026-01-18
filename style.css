@@ -457,6 +457,7 @@ h4 {
     display: block;
     width: 100%;
     padding-left: 20px;
+    padding-right: 20px;
   }
   .about_right {
     display: flex;
@@ -507,7 +508,7 @@ h4 {
     text-align: justify; /* Alinhamento base */
   }
   h3 {
-    font-size: 28px;
+    font-size: 26px;
     line-height: 1.2;
     text-align-last: auto;
     color: #006fb9;
