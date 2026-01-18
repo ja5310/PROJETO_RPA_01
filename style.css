@@ -379,11 +379,11 @@ h4 {
   }
   /* ======MOBILE=ABOUT=========*/
   .about {
-    margin-top: 20px;
-    margin-bottom: 10px;
-    display: block;
+    padding: 0;
+    margin: 0;
     width: 100%;
-    height: 85vh;
+    display: block;
+    height: auto;
   }
 
   .about_left {
@@ -392,13 +392,19 @@ h4 {
     padding-left: 20px;
   }
   .about_right {
-    width: 50%;
+    display: flex;
+    width: 100%;
+    margin: 0;
+    padding: 0;
   }
   .about_img {
-    width: 350px;
-    height: 450px;
-    margin-left: 15%;
-    margin-top: 20px;
+    width: 100%; /* Ocupa toda a largura */
+    max-height: 380px;
+    aspect-ratio: 282 / 350;
+    display: block;
+    margin: 20px 0 0 0;
+    object-fit: cover;
+    margin-top: 30px;
   }
   .about_retangulo_10 {
     position: absolute;
@@ -408,19 +414,20 @@ h4 {
     background-size: cover; /* ESSENCIAL */
     background-position: center;
     background-repeat: no-repeat;
-    margin-left: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
   }
   h5 {
     display: flex;
     color: white;
-    font-size: 22px;
+    font-size: 12px;
     align-items: center; /* vertical */
     justify-content: center; /* horizontal */
   }
   h6 {
     display: flex;
     color: white;
-    font-size: 11px;
+    font-size: 10px;
   }
   h2 {
     font-size: 22px;
