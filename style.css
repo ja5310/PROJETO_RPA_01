@@ -336,6 +336,7 @@ h4 {
   }
 
   .hero-content {
+    display: flex;
     flex-direction: column;
     gap: 40px;
     padding: 10vh;
@@ -461,9 +462,9 @@ h4 {
 
   .Quadrado-Servicos {
     display: flex;
+    box-sizing: border-box;
     align-items: center; /* Centraliza o ícone e o texto verticalmente */
     justify-content: flex-start; /* Alinha o conteúdo ao início (esquerda) */
-
     background-color: #fff;
     border-radius: 15px; /* Bordas arredondadas da imagem */
     text-align: left; /* Alinhamento à esquerda conforme a foto */
