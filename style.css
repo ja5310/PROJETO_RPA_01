@@ -10,8 +10,8 @@ body {
 }
 
 /* BACKGROUND */
-.background-rpa {
-  width: 100vw;
+.background-home {
+  width: 100%;
   height: 100vh;
   background-image: url("./assets/fundo01.png");
   background-size: cover;
@@ -152,8 +152,8 @@ button:hover {
   max-height: 400px;
 }
 .about {
-  margin-top: 100px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
+  padding: 40px 1px 40px 80px;
   display: inline-flex;
   width: 100%;
   height: 85vh;
@@ -241,7 +241,7 @@ h4 {
   border-radius: 15px; /* Bordas arredondadas da imagem */
   text-align: left; /* Alinhamento à esquerda conforme a foto */
   width: 200px; /* Largura fixa */
-  height: 180px; /* Altura mínima para todos ficarem iguais */
+  height: 150px; /* Altura mínima para todos ficarem iguais */
   /* Sombra 3D Suave */
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
   transition:
@@ -287,6 +287,66 @@ h4 {
   padding: 0;
 }
 
+.conteiner-values {
+  position: relative;
+  display: inline-block;
+  background: linear-gradient(90deg, #006fb9 8%, #00afef 89%, #1bb9f2 100%);
+  overflow: visible;
+  margin-bottom: 20px;
+  padding: 5px 0px 10px 0px;
+  width: 100%;
+  height: auto;
+}
+.sub-background {
+  display: flex;
+  z-index: 2;
+}
+.conteiner-values-top {
+  display: block;
+  width: 100%;
+  padding-left: 60px;
+  margin-bottom: 40px;
+}
+.conteiner-values-bottom {
+  display: flex;
+  width: 100%;
+  flex: 1.5;
+  position: relative;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.values-dark-bg {
+  color: white;
+  padding: 10px;
+  display: inline;
+  gap: 10px;
+  position: relative;
+}
+
+.values-dark-bg {
+  z-index: 1;
+}
+
+.conteiner-values-top h2 {
+  color: #fff;
+  font-size: 22px;
+  position: absolute;
+  top: 2px;
+}
+
+.values-dark-bg h3 {
+  color: #fff;
+  font-size: 16px;
+  margin-bottom: 5px;
+  position: relative;
+}
+
+.values-dark-bg p {
+  font-size: 15px;
+  line-height: 1.5;
+}
+
 /* =========================
     MOBILE (até 768px)
   ========================= */
@@ -296,11 +356,10 @@ h4 {
     display: none;
   }
 
-  .background-rpa {
+  .background-home {
     height: auto;
   }
 
-  /* HEADER MOBILE REVISADO */
   .header {
     display: none;
     position: absolute;
@@ -347,9 +406,8 @@ h4 {
 
   .hero-content {
     display: block;
-    flex-direction: column;
-    padding: 10vh;
-    margin: 0 auto;
+    padding: 20px;
+    margin-bottom: 32px;
     text-align: center;
   }
 
@@ -531,6 +589,50 @@ h4 {
     line-height: 1.5;
     text-align: left; /* Garante que o texto não herde o center do body */
     padding: 0;
+  }
+
+  .conteiner-values {
+    padding: 16px 10px 24px 10px;
+  }
+
+  .sub-background {
+    flex-direction: column;
+  }
+
+  .conteiner-values-top {
+    padding-left: 0;
+    position: relative; /* ⬅️ VOLTA PARA O FLUXO */
+    text-align: left;
+    margin-bottom: 10px; /* ⬅️ CONTROLA A DISTÂNCIA */
+  }
+
+  .conteiner-values-top h2 {
+    position: static;
+    font-size: 20px;
+    margin: 0;
+  }
+
+  .conteiner-values-bottom {
+    flex-direction: column;
+    padding: 0;
+    gap: 10px;
+  }
+
+  .values-dark-bg {
+    padding: 8px 0;
+    text-align: left;
+  }
+
+  .values-dark-bg h3 {
+    font-size: 15px;
+    margin-top: 2px;
+    margin-bottom: 4px;
+  }
+
+  .values-dark-bg p {
+    font-size: 14px;
+    line-height: 1.4;
+    margin: 0;
   }
 }
 /* =========================
