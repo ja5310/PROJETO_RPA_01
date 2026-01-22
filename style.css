@@ -680,7 +680,7 @@ h4 {
   .conteiner-values-top h2 {
     position: static;
     font-size: 20px;
-    margin: 0;
+    margin: 0 0 21px 0;
   }
 
   .conteiner-values-bottom {
@@ -716,11 +716,11 @@ h4 {
   }
 
   .bloco {
-    width: 90%;
+    width: 100%;
     max-width: 360px;
     height: auto;
     transform: skewX(-6deg);
-    padding: 20px 0;
+    padding: 13px 0;
   }
 
   .bloco::before {
@@ -735,7 +735,7 @@ h4 {
 
   .conteudo h2 {
     font-size: 22px;
-    margin-bottom: 10px;
+    margin: 0 0 5px 0;
     text-align: center;
   }
 
