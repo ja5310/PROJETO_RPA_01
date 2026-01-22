@@ -152,7 +152,6 @@ button:hover {
   max-height: 400px;
 }
 .about {
-  margin-bottom: 20px;
   padding: 40px 1px 40px 80px;
   display: inline-flex;
   width: 100%;
@@ -349,6 +348,73 @@ h4 {
 .values-dark-bg p {
   font-size: 15px;
   line-height: 1.5;
+}
+
+.vision-mission-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 120px;
+  width: 100%;
+  height: 230px;
+  margin: 0px 0 10px 0;
+}
+
+/* BLOCOS */
+.bloco {
+  position: relative;
+  width: 480px;
+  height: 220px;
+  background-color: #e2ff9e; /* azul */
+  transform: skewX(-10deg);
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  z-index: 2; /* garante que aparece */
+}
+
+/* faixa verde atrás */
+.bloco::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  width: 100%;
+  height: 90%;
+  background-color: #006fb9;
+  z-index: -1; /* fica atrás do azul */
+}
+
+/* conteúdo reto */
+.conteudo {
+  transform: skewX(10deg);
+  text-align: center;
+  color: #fff;
+  padding: 5px 40px;
+}
+
+.conteudo h2 {
+  color: #ffffff;
+  font-size: 32px;
+  margin-bottom: 16px;
+}
+
+.conteudo p {
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+/* MASCOTE */
+.mascote-central {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 160px;
+  z-index: 10;
+  background: #fff;
+  border-radius: 50%;
+  padding: 10px;
 }
 
 /* =========================
@@ -597,7 +663,7 @@ h4 {
   }
 
   .conteiner-values {
-    padding: 16px 10px 24px 10px;
+    padding: 10px 10px 24px 10px;
   }
 
   .sub-background {
@@ -606,9 +672,9 @@ h4 {
 
   .conteiner-values-top {
     padding-left: 0;
-    position: relative; /* ⬅️ VOLTA PARA O FLUXO */
+    position: relative;
     text-align: left;
-    margin-bottom: 10px; /* ⬅️ CONTROLA A DISTÂNCIA */
+    margin-bottom: 10px;
   }
 
   .conteiner-values-top h2 {
@@ -618,7 +684,7 @@ h4 {
   }
 
   .conteiner-values-bottom {
-    flex-direction: column;
+    display: block;
     padding: 0;
     gap: 10px;
   }
@@ -626,6 +692,7 @@ h4 {
   .values-dark-bg {
     padding: 8px 0;
     text-align: left;
+    margin-bottom: 10px;
   }
 
   .values-dark-bg h3 {
@@ -637,7 +704,56 @@ h4 {
   .values-dark-bg p {
     font-size: 14px;
     line-height: 1.4;
-    margin: 0;
+    margin-bottom: 20px;
+  }
+
+  .vision-mission-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    padding: 10px 20px 10px 20px;
+    gap: 0;
+  }
+
+  .bloco {
+    width: 90%;
+    max-width: 360px;
+    height: auto;
+    transform: skewX(-6deg);
+    padding: 20px 0;
+  }
+
+  .bloco::before {
+    top: 8px;
+    height: 95%;
+  }
+
+  .conteudo {
+    transform: skewX(6deg);
+    padding: 0px 10px 0px 10px;
+  }
+
+  .conteudo h2 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  .conteudo p {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .mascote-central {
+    position: relative;
+    left: auto;
+    top: auto;
+    transform: none;
+    width: 120px;
+    margin: -10px 0;
+    background: #fff;
+    border-radius: 50%;
+    padding: 8px;
   }
 }
 /* =========================
