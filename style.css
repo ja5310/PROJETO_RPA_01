@@ -291,7 +291,6 @@ h4 {
   display: inline-block;
   background-color: #006fb9;
   overflow: visible;
-  margin-bottom: 20px;
   padding: 5px 0px 10px 0px;
   width: 100%;
   height: auto;
@@ -416,21 +415,10 @@ h4 {
   border-radius: 50%;
   padding: 10px;
 }
-.background-home02 {
-  width: 100%;
-  height: 78vh;
-  background-image: url("./assets/img_02.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  position: relative;
-
-  opacity: 76%;
-}
 
 .stats-container {
   width: 100%;
-  background: linear-gradient(180deg, #2cb4f3, #1992ca);
+  background: linear-gradient(180deg, #006fb9, #1992ca);
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -441,7 +429,7 @@ h4 {
 .stat {
   text-align: center;
   font-family: Arial, sans-serif;
-  color: #1c1c1c;
+  color: #ffffff;
 }
 
 .stat .number {
@@ -455,11 +443,82 @@ h4 {
   font-size: 16px;
   font-weight: 500;
 }
+.information-value {
+  position: relative; /* ESSENCIAL */
+  display: flex;
+  width: 100%;
+  min-height: 80vh; /* ou a altura que você quiser */
+  overflow: hidden;
+}
+
+.background-home02 {
+  position: absolute;
+  inset: 0;
+  background-image: url("./assets/img_02.png");
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+  height: 602px;
+}
+
+.hero-information {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 120px 20px;
+  text-align: center;
+}
+
+/* TÍTULO PRINCIPAL */
+.hero-information h1 {
+  font-size: clamp(32px, 4vw, 52px);
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+/* TEXTO DE APOIO */
+.hero-information p {
+  font-size: clamp(16px, 1.5vw, 20px);
+  line-height: 1.6;
+  max-width: 720px;
+  margin: 0 auto 40px auto;
+  opacity: 0.95;
+}
+
+/* BOTÃO */
+.hero-information button {
+  background: #ffc107;
+  color: #000;
+  border: none;
+  padding: 14px 36px;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+/* HOVER DO BOTÃO */
+.hero-information button:hover {
+  background: #fdbe02;
+  transform: translateY(-2px);
+}
 
 /* =========================
     MOBILE (até 768px)
   ========================= */
 @media (max-width: 768px) {
+  body {
+    min-height: 100vh;
+    display: block;
+  }
+
   /* BACKGROUND */
   .header-right {
     display: none;
@@ -702,7 +761,8 @@ h4 {
   }
 
   .conteiner-values {
-    padding: 10px 10px 24px 10px;
+    padding: 10px 20px 20px 20px;
+    margin: 0;
   }
 
   .sub-background {
@@ -793,6 +853,57 @@ h4 {
     background: #fff;
     border-radius: 50%;
     padding: 8px;
+  }
+
+  /* HERO */
+  .information-value {
+    min-height: 70vh;
+  }
+
+  .background-home02 {
+    height: 100%;
+    background-position: center top;
+  }
+
+  .hero-information {
+    padding: 40px 0 0 10px;
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .hero-information h1 {
+    font-size: 28px;
+    line-height: 1.25;
+  }
+
+  .hero-information p {
+    font-size: 15px;
+    line-height: 1.5;
+    margin-bottom: 30px;
+  }
+
+  .hero-information button {
+    width: 100%;
+    max-width: 280px;
+    padding: 14px 0;
+    font-size: 13px;
+    letter-spacing: 1.5px;
+  }
+
+  /* STATS */
+  .stats-container {
+    display: grid;
+    gap: 25px;
+    padding: 10px 0 17px 0;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .stat .number {
+    font-size: 40px;
+  }
+
+  .stat .label {
+    font-size: 14px;
   }
 }
 /* =========================
