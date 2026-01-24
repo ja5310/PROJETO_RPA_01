@@ -824,7 +824,7 @@ h4 {
 
   .bloco::before {
     top: 8px;
-    height: 95%;
+    height: 89%;
   }
 
   .conteudo {
@@ -866,7 +866,7 @@ h4 {
   }
 
   .hero-information {
-    padding: 40px 0 0 10px;
+    padding: 40px 10px 0 10px;
     max-width: 100%;
     text-align: center;
   }
