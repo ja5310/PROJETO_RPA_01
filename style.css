@@ -576,7 +576,7 @@ h4 {
 
   .hero-content {
     display: block;
-    padding: 0 32px 20px 32px;
+    padding: 30px 32px 30px 32px;
     margin-bottom: 32px;
     text-align: center;
   }
@@ -606,6 +606,7 @@ h4 {
     margin: 24px auto 0;
     padding: 14px 0;
     border-radius: 25px;
+    background-color: #c7ff00;
   }
 
   /* IMAGEM */
@@ -628,6 +629,7 @@ h4 {
     width: 100%;
     padding-left: 30px;
     padding-right: 30px;
+    margin-bottom: 23px;
   }
   .about_right {
     display: flex;
@@ -822,6 +824,7 @@ h4 {
     height: auto;
     transform: skewX(-6deg);
     padding: 13px 0;
+    background-color: #c7ff00;
   }
 
   .bloco::before {
@@ -831,7 +834,7 @@ h4 {
 
   .conteudo {
     transform: skewX(6deg);
-    padding: 0px 10px 0px 10px;
+    padding: 10px;
   }
 
   .conteudo h2 {
@@ -859,7 +862,7 @@ h4 {
 
   /* HERO */
   .information-value {
-    min-height: 70vh;
+    min-height: 78vh;
   }
 
   .background-home02 {
@@ -881,10 +884,12 @@ h4 {
   .hero-information p {
     font-size: 15px;
     line-height: 1.5;
-    margin-bottom: 30px;
+    margin-bottom: 130px;
   }
 
   .hero-information button {
+    background-color: #006fb994;
+    color: white;
     width: 100%;
     max-width: 280px;
     padding: 14px 0;
