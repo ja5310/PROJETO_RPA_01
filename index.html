@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>RPA Metalúrgica e Montagem</title>
-
     <link rel="stylesheet" href="./style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -185,37 +184,26 @@
 
  <div class="stats-container">
   <div class="stat">
-    <span class="number">20+</span>
+    <span class="counter" data-target="20">0</span><span class="plus">+</span>
     <span class="label">Regiões do Brasil</span>
   </div>
 
   <div class="stat">
-    <span class="number">25+</span>
+    <span class="counter" data-target="25">0</span><span class="plus">+</span>
     <span class="label">Especialidades</span>
   </div>
 
   <div class="stat">
-    <span class="number">121+</span>
+    <span class="counter" data-target="121">0</span><span class="plus">+</span>
     <span class="label">Empresas</span>
   </div>
 
   <div class="stat">
-    <span class="number">4.6</span>
+    <span class="counter" data-target="4.6">0</span>
     <span class="label">Avaliações</span>
   </div>
 </div>
 
-
-
-
-    <script>
-        const toggle = document.getElementById("menu-toggle");
-        const menu = document.getElementById("menu-mobile");
-
-        toggle.addEventListener("click", () => {
-            menu.classList.toggle("active");
-        });
-</script>
-
-  </body>
+  <script src="./script.js"></script>
+ </body>
 </html>
