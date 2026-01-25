@@ -53,7 +53,7 @@ body {
   text-decoration: none;
 }
 .chosen_link {
-  color: #f55a00;
+  color: #c7ff00;
   font-size: 20px;
   font-weight: 600;
   text-decoration: none;
@@ -140,7 +140,7 @@ button:hover {
 .hero-btn {
   margin-top: 30px;
   padding: 14px 32px;
-  background: #f55a00;
+  background: #c7ff00;
   border: none;
   font-weight: 700;
   cursor: pointer;
@@ -493,7 +493,7 @@ h4 {
 
 /* BOTÃO */
 .hero-information button {
-  background: #ffc107;
+  background: #c7ff00;
   color: #000;
   border: none;
   padding: 14px 36px;
@@ -508,7 +508,7 @@ h4 {
 
 /* HOVER DO BOTÃO */
 .hero-information button:hover {
-  background: #fdbe02;
+  background: #c7ff00;
   transform: translateY(-2px);
 }
 
@@ -765,7 +765,7 @@ h4 {
   }
 
   .conteiner-values {
-    padding: 10px 26px 20px 26px;
+    padding: 23px 26px 20px 26px;
     margin: 0;
   }
 
@@ -824,7 +824,7 @@ h4 {
     height: auto;
     transform: skewX(-6deg);
     padding: 13px 0;
-    background-color: #c7ff00;
+    background-color: #c7ff00b3;
   }
 
   .bloco::before {
@@ -884,7 +884,7 @@ h4 {
   .hero-information p {
     font-size: 15px;
     line-height: 1.5;
-    margin-bottom: 130px;
+    margin-bottom: 50%;
   }
 
   .hero-information button {
