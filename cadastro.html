@@ -4,6 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>RPA Metalúrgica e Montagem</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/flatpickr/dist/themes/material_blue.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://npmcdn.com/flatpickr/dist/l10n/pt.js"></script>
     <link rel="stylesheet" href="./style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -25,6 +31,7 @@
       <div class="conteiner-cadastro-right">
         <div class="form-wrapper">
           <div class="form-header">
+            <a href="index.html" class="btn-back">← Voltar</a>
             <div class="logo">RPA<span>Montagem</span></div>
             <h2>A nova forma de fazer conexões 🤝</h2>
             <p>Encontre clientes e fornecedores para suas demandas!</p>
@@ -95,8 +102,7 @@
                   id="nascimento"
                   name="nascimento"
                   placeholder="Data de nascimento *"
-                  onfocus="this.type = 'date'"
-                  onblur="if (!this.value) this.type = 'text';"
+                  required
                 />
               </div>
             </div>
@@ -154,5 +160,6 @@
         </div>
       </div>
     </div>
+    <script src="./script_cadastro.js"></script>
   </body>
 </html>

@@ -563,7 +563,7 @@ h4 {
 
 .form-wrapper {
   background: var(--bg-white);
-  padding: 40px;
+  padding: 28px;
   border-radius: 8px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
   max-width: 700px;
@@ -580,6 +580,7 @@ h4 {
   font-weight: bold;
   color: #2c3e50;
   margin-bottom: 10px;
+  height: 20px;
 }
 
 .logo span {
@@ -692,6 +693,55 @@ input[type="radio"] {
   text-decoration: none;
 }
 
+/* Personalização do Calendário Flatpickr */
+.flatpickr-calendar {
+  border-radius: 12px !important; /* Bordas arredondadas como seus inputs */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1) !important;
+  border: 1px solid #eee !important;
+  font-family: "Montserrat", sans-serif !important;
+}
+
+/* Cor do cabeçalho (Mesmo azul da MetalConnect) */
+.flatpickr-months {
+  background: #1ac2ff !important;
+  border-radius: 12px 12px 0 0 !important;
+}
+
+.flatpickr-current-month,
+.flatpickr-month {
+  color: white !important;
+  fill: white !important;
+}
+
+/* Cor do dia selecionado */
+.flatpickr-day.selected {
+  background: #28a745 !important;
+  border-color: #28a745 !important;
+}
+
+/* Efeito ao passar o mouse */
+.flatpickr-day:hover {
+  background: #e0f7ff !important;
+}
+.btn-back {
+  display: flex; /* Mudamos para flex para alinhar melhor o ícone */
+  align-items: center;
+  text-decoration: none;
+  color: #00afef; /* O azul da MetalConnect */
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+  transition: all 0.2s;
+
+  /* Garante que ele fique na esquerda mesmo que o pai tenha text-align: center */
+  width: fit-content;
+  margin-right: auto;
+}
+
+.btn-back:hover {
+  transform: translateX(-5px);
+  color: #008cc0;
+}
 /* =========================
     MOBILE (até 768px)
   ========================= */

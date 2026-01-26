@@ -49,8 +49,10 @@ const observer = new IntersectionObserver(
 
 counters.forEach((counter) => observer.observe(counter));
 
-// 1. Remova o ponto
-const input = document.getElementsByClassName("input-box");
+const btnCadastro = document.querySelector(".hero-btn");
 
-// 2. Acesse o índice [0] para pegar o primeiro item da lista
-console.log(input[0].className);
+if (btnCadastro) {
+  btnCadastro.addEventListener("click", () => {
+    window.location.href = "cadastro.html"; // Nome da sua página de destino
+  });
+}
