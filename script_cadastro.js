@@ -2,8 +2,6 @@ const opcoesDoc = document.querySelectorAll('input[name="doc_tipo"]');
 
 opcoesDoc.forEach((radio) => {
   radio.addEventListener("change", () => {
-    console.log("Tipo de documento selecionado: " + radio.value);
-
     const inputDoc = document.getElementById("documento");
     inputDoc.placeholder = `Nº do seu ${radio.value.toUpperCase()} *`;
   });

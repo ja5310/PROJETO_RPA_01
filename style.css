@@ -724,16 +724,14 @@ input[type="radio"] {
   background: #e0f7ff !important;
 }
 .btn-back {
-  display: flex; /* Mudamos para flex para alinhar melhor o ícone */
+  display: flex;
   align-items: center;
   text-decoration: none;
-  color: #00afef; /* O azul da MetalConnect */
+  color: #00afef;
   font-weight: 600;
   font-size: 0.9rem;
   margin-bottom: 10px;
   transition: all 0.2s;
-
-  /* Garante que ele fique na esquerda mesmo que o pai tenha text-align: center */
   width: fit-content;
   margin-right: auto;
 }
