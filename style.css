@@ -512,6 +512,186 @@ h4 {
   transform: translateY(-2px);
 }
 
+/* Outra Pagina*/
+
+/* CONTAINER PAI */
+.conteiner-cadastro {
+  display: flex;
+  flex-direction: row; /* Alinha lado a lado, não um em cima do outro */
+  width: 100%;
+  height: 100vh;
+  overflow: hidden; /* Evita scrolls estranhos */
+}
+
+/* LADO ESQUERDO (IMAGEM) */
+.conteiner-cadastro-left {
+  height: 100vh;
+  width: 50%; /* Ocupa metade da tela */
+  background-color: #f0f0f0; /* Caso a imagem falhe */
+}
+
+.img-cadastro {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Faz a imagem preencher o espaço sem distorcer */
+}
+
+/* LADO DIREITO (FORMULÁRIO) */
+.conteiner-cadastro-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%; /* Ocupa a outra metade da tela */
+  height: 100vh;
+  padding: 20px;
+  background-color: #f5f7fa;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  overflow-y: auto; /* Permite scroll apenas no form se a tela for pequena */
+}
+
+.conteiner-cadastro-left {
+  height: 100vh;
+  width: 50%;
+}
+
+:root {
+  --primary-blue: #00afef;
+  --text-gray: #777;
+  --border-gray: #ddd;
+  --bg-white: #ffffff;
+}
+
+.form-wrapper {
+  background: var(--bg-white);
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  max-width: 700px;
+  width: 100%;
+}
+
+.form-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: bold;
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.logo span {
+  color: #00afef;
+}
+
+.form-header h2 {
+  font-size: 18px;
+  color: #444;
+  margin-bottom: 5px;
+}
+
+.form-header p {
+  font-size: 14px;
+  color: var(--text-gray);
+}
+
+/* Inputs e Grid */
+.input-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.input-box input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--border-gray);
+  border-radius: 5px;
+  outline: none;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+.input-box small {
+  font-size: 11px;
+  color: #999;
+  margin-top: 4px;
+  display: block;
+}
+
+input[type="radio"] {
+  accent-color: #28a745; /* Um verde padrão de 'sucesso' */
+  cursor: pointer;
+}
+/* Radio Buttons */
+.radio-group {
+  margin-bottom: 20px;
+  display: flex;
+  gap: 15px;
+}
+
+.radio-group label {
+  font-size: 14px;
+  color: var(--text-gray);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.doc-type span {
+  font-size: 12px;
+  color: var(--primary-blue);
+  display: block;
+  margin-bottom: 5px;
+}
+
+/* Checkbox e Botão */
+.terms-box {
+  margin: 20px 0;
+  font-size: 13px;
+  color: #555;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.terms-box a {
+  color: var(--primary-blue);
+  text-decoration: none;
+}
+
+.btn-submit {
+  width: 100%;
+  padding: 14px;
+  background-color: var(--primary-blue);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn-submit:hover {
+  background-color: #4a7cd8;
+}
+
+.footer-link {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+  color: #666;
+}
+
+.footer-link a {
+  color: var(--primary-blue);
+  text-decoration: none;
+}
+
 /* =========================
     MOBILE (até 768px)
   ========================= */
@@ -884,7 +1064,7 @@ h4 {
   .hero-information p {
     font-size: 15px;
     line-height: 1.5;
-    margin-bottom: 50%;
+    margin-bottom: 60%;
   }
 
   .hero-information button {

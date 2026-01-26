@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RPA Metalúrgica e Montagem</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="conteiner-cadastro">
+      <div class="conteiner-cadastro-left">
+        <img
+          class="img-cadastro"
+          src="./assets/colaborador.png"
+          alt="Colaborador RPA Montagem"
+        />
+      </div>
+
+      <div class="conteiner-cadastro-right">
+        <div class="form-wrapper">
+          <div class="form-header">
+            <div class="logo">RPA<span>Montagem</span></div>
+            <h2>A nova forma de fazer conexões 🤝</h2>
+            <p>Encontre clientes e fornecedores para suas demandas!</p>
+          </div>
+
+          <form>
+            <div class="radio-group main-selection">
+              <label
+                ><input type="radio" name="perfil" value="cliente" checked />
+                Cliente</label
+              >
+              <label
+                ><input type="radio" name="perfil" value="colaborador" />
+                Colaborador</label
+              >
+            </div>
+
+            <div class="input-grid">
+              <div class="input-box">
+                <input
+                  type="text"
+                  id="nome"
+                  name="nome"
+                  placeholder="Nome Completo *"
+                  required
+                />
+              </div>
+              <div class="input-box">
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="Email *"
+                  required
+                />
+              </div>
+              <div class="input-box">
+                <input
+                  type="password"
+                  id="senha"
+                  name="senha"
+                  placeholder="Senha *"
+                  required
+                />
+                <small>Mínimo de 4 caracteres</small>
+              </div>
+              <div class="input-box">
+                <input
+                  type="password"
+                  id="confirmar_senha"
+                  name="confirmar_senha"
+                  placeholder="Confirme sua senha *"
+                  required
+                />
+                <small>Insira a mesma senha nos dois campos</small>
+              </div>
+              <div class="input-box">
+                <input
+                  type="text"
+                  id="lembrete"
+                  name="lembrete"
+                  placeholder="Lembrete de senha *"
+                />
+              </div>
+              <div class="input-box">
+                <input
+                  type="text"
+                  id="nascimento"
+                  name="nascimento"
+                  placeholder="Data de nascimento *"
+                  onfocus="this.type = 'date'"
+                  onblur="if (!this.value) this.type = 'text';"
+                />
+              </div>
+            </div>
+
+            <div class="input-grid doc-section">
+              <div class="doc-type">
+                <span>Tipo de documento</span>
+                <div class="radio-group">
+                  <label
+                    ><input type="radio" name="doc_tipo" value="cpf" checked />
+                    CPF</label
+                  >
+                  <label
+                    ><input type="radio" name="doc_tipo" value="cnpj" />
+                    CNPJ</label
+                  >
+                </div>
+              </div>
+              <div class="input-box">
+                <input
+                  type="text"
+                  id="documento"
+                  name="documento"
+                  placeholder="Nº do seu CPF/CNPJ *"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="input-box full-width">
+              <input
+                type="tel"
+                id="telefone"
+                name="telefone"
+                placeholder="Número de Telefone *"
+                required
+              />
+            </div>
+
+            <div class="terms-box">
+              <input type="checkbox" id="terms" name="terms" required />
+              <label for="terms">
+                Declaro que li e concordo com os
+                <a href="#">termos de uso</a> e
+                <a href="#">política de privacidade</a> *
+              </label>
+            </div>
+
+            <button type="submit" class="btn-submit">CRIAR CONTA</button>
+
+            <p class="footer-link">
+              Já possui uma conta? <a href="#">Realize seu login</a>
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
