@@ -1,9 +1,16 @@
-const opcoesDoc = document.querySelectorAll('input[name="doc_tipo"]');
+const opcoesDoc = document.querySelectorAll('input[name="perfil"]');
 
 opcoesDoc.forEach((radio) => {
   radio.addEventListener("change", () => {
     const inputDoc = document.getElementById("documento");
-    inputDoc.placeholder = `Nº do seu ${radio.value.toUpperCase()} *`;
+
+    if (radio.value === "cliente") {
+      inputDoc.placeholder = "Nº do seu CPF *";
+    } else if (radio.value === "colaborador") {
+      inputDoc.placeholder = "Nº do seu CNPJ *";
+    } else {
+      inputDoc.placeholder = "";
+    }
   });
 });
 

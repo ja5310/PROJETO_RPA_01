@@ -38,7 +38,7 @@
           </div>
 
           <form>
-            <div class="radio-group">
+            <div class="radio-group main-selection">
               <label
                 ><input type="radio" name="perfil" value="cliente" checked />
                 Cliente</label
@@ -48,26 +48,16 @@
                 Colaborador</label
               >
             </div>
-
+            <div class="input-box full-width">
+              <input
+                type="text"
+                id="nome"
+                name="nome"
+                placeholder="Nome Completo *"
+                required
+              />
+            </div>
             <div class="input-grid">
-              <div class="input-box">
-                <input
-                  type="text"
-                  id="nome"
-                  name="nome"
-                  placeholder="Nome Completo *"
-                  required
-                />
-              </div>
-              <div class="input-box">
-                <input
-                  type="tel"
-                  id="telefone"
-                  name="telefone"
-                  placeholder="Número de Telefone *"
-                  required
-                />
-              </div>
               <div class="input-box">
                 <input
                   type="password"
@@ -106,27 +96,24 @@
                 />
               </div>
             </div>
-
             <div class="input-grid doc-section">
               <div class="doc-type">
-                <span>Tipo de documento</span>
-                <div class="radio-group">
-                  <label
-                    ><input type="radio" name="doc_tipo" value="cpf" checked />
-                    CPF</label
-                  >
-                  <label
-                    ><input type="radio" name="doc_tipo" value="cnpj" />
-                    CNPJ</label
-                  >
+                <div class="input-box">
+                  <input
+                    type="text"
+                    id="documento"
+                    name="documento"
+                    placeholder="Nº do seu CPF/CNPJ *"
+                    required
+                  />
                 </div>
               </div>
               <div class="input-box">
                 <input
-                  type="text"
-                  id="documento"
-                  name="documento"
-                  placeholder="Nº do seu CPF/CNPJ *"
+                  type="tel"
+                  id="telefone"
+                  name="telefone"
+                  placeholder="Número de Telefone *"
                   required
                 />
               </div>

@@ -74,8 +74,9 @@ body {
 }
 
 button:hover {
-  color: #1ac2ff;
-  background: #e4f5f9;
+  color: #000;
+  background: #c7ff00;
+  font-weight: 500;
 }
 
 /* HERO */
@@ -145,6 +146,12 @@ button:hover {
   font-weight: 700;
   cursor: pointer;
   border-radius: 20px;
+}
+
+.hero-btn:hover {
+  color: white;
+  background: #006fb9;
+  font-weight: 500;
 }
 
 /* IMAGEM DIREITA */
@@ -508,7 +515,8 @@ h4 {
 
 /* HOVER DO BOTÃO */
 .hero-information button:hover {
-  background: #c7ff00;
+  color: white;
+  background: #006fb9;
   transform: translateY(-2px);
 }
 
@@ -604,6 +612,7 @@ h4 {
   grid-template-columns: 1fr 1fr;
   gap: 15px;
   margin-bottom: 15px;
+  margin-top: 15px;
 }
 
 .input-box input {
@@ -622,9 +631,16 @@ h4 {
   margin-top: 4px;
   display: block;
 }
-
+.input-box input:focus {
+  border-color: #c7ff00;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(199, 255, 0, 0.25);
+}
+input[type="checkbox"] {
+  accent-color: #c7ff00;
+}
 input[type="radio"] {
-  accent-color: #28a745; /* Um verde padrão de 'sucesso' */
+  accent-color: #c7ff00; /* Um verde padrão de 'sucesso' */
   cursor: pointer;
 }
 /* Radio Buttons */
@@ -678,7 +694,8 @@ input[type="radio"] {
 }
 
 .btn-submit:hover {
-  background-color: #4a7cd8;
+  background-color: #c7ff00;
+  color: #000;
 }
 
 .footer-link {
@@ -747,6 +764,7 @@ input[type="radio"] {
   body {
     min-height: 100vh;
     display: block;
+    overflow-x: hidden;
   }
 
   /* BACKGROUND */
@@ -759,7 +777,6 @@ input[type="radio"] {
   }
 
   .header {
-    display: none;
     position: absolute;
     top: 0;
     left: 0;
@@ -1146,6 +1163,64 @@ input[type="radio"] {
 
   .stat .label {
     font-size: 14px;
+  }
+
+  /* Container principal vira coluna */
+  .conteiner-cadastro {
+    flex-direction: column;
+    height: auto;
+  }
+
+  /* Remove lado da imagem */
+  .conteiner-cadastro-left {
+    display: none;
+  }
+
+  /* Formulário ocupa tudo */
+  .conteiner-cadastro-right {
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+    padding: 0;
+  }
+
+  /* Caixa do formulário */
+  .form-wrapper {
+    max-width: 100%;
+    padding: 22px;
+    border-radius: 10px;
+  }
+
+  /* Grid vira coluna */
+  .input-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  /* Radios em coluna */
+  .radio-group {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  /* Botão maior */
+  .btn-submit {
+    padding: 16px;
+    font-size: 15px;
+  }
+
+  /* Textos */
+  .form-header h2 {
+    font-size: 20px;
+  }
+
+  .form-header p {
+    font-size: 14px;
+  }
+
+  /* Links */
+  .footer-link {
+    font-size: 13px;
   }
 }
 /* =========================
