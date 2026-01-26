@@ -1199,8 +1199,8 @@ input[type="radio"] {
 
   /* Radios em coluna */
   .radio-group {
-    flex-direction: column;
-    gap: 10px;
+    flex-direction: row;
+    gap: 26px;
   }
 
   /* Botão maior */
@@ -1211,7 +1211,9 @@ input[type="radio"] {
 
   /* Textos */
   .form-header h2 {
-    font-size: 20px;
+    font-size: 17px;
+    text-align: center; /* Isso centraliza o texto e o emoji */
+    width: 100%; /* Garante que ele ocupe a largura total */
   }
 
   .form-header p {
