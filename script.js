@@ -150,31 +150,21 @@ if (campoNascimento && typeof flatpickr !== "undefined") {
    FUNDO ANIMADO (PARTICLES.JS)
 ============================ */
 
-if (document.getElementById("particles-js")) {
+if (document.getElementById("particles-js") && !window.particlesInitialized) {
+  window.particlesInitialized = true;
+
   particlesJS("particles-js", {
     particles: {
       number: { value: 100, density: { enable: true, value_area: 500 } },
       color: { value: "#00afef" },
-      shape: {
-        type: "edge",
-      },
+      shape: { type: "edge" },
       opacity: {
         value: 0.6,
         random: true,
-        anim: { enable: true, speed: 0.1, opacity_min: 0.1, sync: false },
+        anim: { enable: true, speed: 0.1, opacity_min: 0.1 },
       },
-      size: {
-        value: 50,
-        random: true,
-        anim: { enable: false, speed: 100, size_min: 0.9, sync: false },
-      },
-      line_linked: {
-        enable: false,
-        distance: 150,
-        color: "#00e1ff",
-        opacity: 0.5,
-        width: 1,
-      },
+      size: { value: 50, random: true },
+      line_linked: { enable: false },
       move: {
         enable: true,
         speed: 0.2,
@@ -182,11 +172,9 @@ if (document.getElementById("particles-js")) {
         random: false,
         straight: false,
         out_mode: "out",
-        bounce: true,
       },
     },
     interactivity: {
-      detect_on: "canvas",
       events: {
         onhover: { enable: true, mode: "grab" },
         onclick: { enable: true, mode: "push" },
