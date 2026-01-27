@@ -153,24 +153,23 @@ if (campoNascimento && typeof flatpickr !== "undefined") {
 if (document.getElementById("particles-js")) {
   particlesJS("particles-js", {
     particles: {
-      number: { value: 100, density: { enable: true, value_area: 800 } },
-      color: { value: "#00e5ff" },
+      number: { value: 100, density: { enable: true, value_area: 500 } },
+      color: { value: "#00afef" },
       shape: {
-        type: "polygon",
-        polygon: { nb_sides: 6 }, // Formato de Hexágono
+        type: "edge",
       },
       opacity: {
-        value: 0.3,
+        value: 0.6,
         random: true,
-        anim: { enable: true, speed: 1, opacity_min: 0.1, sync: false },
+        anim: { enable: true, speed: 0.1, opacity_min: 0.1, sync: false },
       },
       size: {
-        value: 10,
+        value: 50,
         random: true,
         anim: { enable: false, speed: 100, size_min: 0.9, sync: false },
       },
       line_linked: {
-        enable: true,
+        enable: false,
         distance: 150,
         color: "#00e1ff",
         opacity: 0.5,
@@ -178,7 +177,7 @@ if (document.getElementById("particles-js")) {
       },
       move: {
         enable: true,
-        speed: 2,
+        speed: 0.2,
         direction: "none",
         random: false,
         straight: false,
