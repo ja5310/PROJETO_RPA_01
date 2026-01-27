@@ -898,13 +898,19 @@ hr {
   display: none;
 }
 .logo-card {
-  position: fixed;
+  position: relative;
   background: #000;
-  bottom: 74px; /* Distância do topo */
-  height: 100px; /* Ajuste o tamanho conforme sua logo */
-  width: auto;
-  object-fit: contain;
+  height: 72px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 22px auto 0 auto;
 }
+.logo-card img {
+  max-height: 80px; /* ajusta o tamanho da logo */
+  width: auto;
+}
+
 #particles-js {
   position: fixed; /* Fixa na tela toda */
   width: 100%;
@@ -1385,13 +1391,15 @@ hr {
   }
 
   .conteiner-calculo {
-    margin-top: 50px;
+    margin-top: 3px;
     min-height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
   }
-
+  .conteiner-calculo h1 {
+    text-align: center;
+  }
   .inputs-calculo {
     display: flex;
     gap: 24px;
@@ -1400,7 +1408,7 @@ hr {
   }
   .card-calculo {
     width: 670px;
-
+    background: #00000091;
     padding: 20px;
     border-radius: 18px;
     box-shadow: 0 0 0 1px #e6e6e6;
@@ -1412,8 +1420,8 @@ hr {
     flex-direction: column;
   }
   .logo-card {
-    height: 150px;
-    bottom: 10vh;
+    height: 80px;
+    bottom: 10px;
   }
 }
 /* =========================
