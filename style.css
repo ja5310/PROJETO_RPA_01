@@ -640,7 +640,7 @@ input[type="checkbox"] {
   accent-color: #c7ff00;
 }
 input[type="radio"] {
-  accent-color: #c7ff00; /* Um verde padrão de 'sucesso' */
+  accent-color: #c7ff00;
   cursor: pointer;
 }
 /* Radio Buttons */
@@ -712,13 +712,12 @@ input[type="radio"] {
 
 /* Personalização do Calendário Flatpickr */
 .flatpickr-calendar {
-  border-radius: 12px !important; /* Bordas arredondadas como seus inputs */
+  border-radius: 12px !important;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1) !important;
   border: 1px solid #eee !important;
   font-family: "Montserrat", sans-serif !important;
 }
 
-/* Cor do cabeçalho (Mesmo azul da MetalConnect) */
 .flatpickr-months {
   background: #1ac2ff !important;
   border-radius: 12px 12px 0 0 !important;
@@ -730,13 +729,11 @@ input[type="radio"] {
   fill: white !important;
 }
 
-/* Cor do dia selecionado */
 .flatpickr-day.selected {
   background: #28a745 !important;
   border-color: #28a745 !important;
 }
 
-/* Efeito ao passar o mouse */
 .flatpickr-day:hover {
   background: #e0f7ff !important;
 }
@@ -757,6 +754,126 @@ input[type="radio"] {
   transform: translateX(-5px);
   color: #008cc0;
 }
+
+/* ========================= */
+/* BLOCO CALCULADORA HORAS  */
+/* ========================= */
+
+.conteiner-calculo {
+  margin: 0;
+  min-height: 100vh;
+  background: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-calculo {
+  width: 670px;
+  background: #ffffff;
+  padding: 32px;
+  border-radius: 18px;
+  box-shadow: 0 0 0 1px #e6e6e6;
+}
+
+.titulo-calculo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.titulo-calculo h1 {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.icone-calculo {
+  font-size: 22px;
+}
+
+.subtitulo-calculo {
+  margin-top: 6px;
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.inputs-calculo {
+  display: flex;
+  gap: 24px;
+  margin-top: 25px;
+}
+
+.campo-calculo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.campo-calculo label {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.input-box-calculo {
+  background: #f3f4f6;
+  border-radius: 10px;
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+}
+
+.input-box-calculo input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  font-size: 16px;
+  outline: none;
+}
+
+.input-box-calculo:focus-within {
+  border-color: #c7ff00;
+  box-shadow: 0 0 0 2px rgb(200, 255, 0);
+}
+.input-box-calculo span {
+  color: #6b7280;
+  font-size: 14px;
+}
+
+hr {
+  margin: 28px 0 20px;
+  border: none;
+  height: 1px;
+  background: #e5e7eb;
+}
+
+.exemplos-calculo {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.botoes-calculo {
+  display: flex;
+  gap: 14px;
+}
+
+.botoes-calculo button {
+  flex: 1;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  background: #eef0f3;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.botoes-calculo button:hover {
+  background: #e2e4e8;
+}
+
 /* =========================
     MOBILE (até 768px)
   ========================= */

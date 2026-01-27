@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Conversor</title>
+  </head>
+
+  <body>
+    <div class="conteiner-calculo">
+      <div class="card-calculo">
+        <div class="titulo-calculo">
+          <span class="icone-calculo">⇄</span>
+          <h1>Conversor de Horas para Dias</h1>
+        </div>
+
+        <p class="subtitulo-calculo">
+          Converta horas de trabalho em dias úteis (8,4 horas = 1 dia)
+        </p>
+
+        <div class="inputs-calculo">
+          <div class="campo-calculo">
+            <label>🕒 Horas de Trabalho</label>
+            <div class="input-box-calculo">
+              <input id="horas" type="number" value="0" />
+              <span>h</span>
+            </div>
+          </div>
+
+          <div class="campo-calculo">
+            <label>📅 Dias Úteis</label>
+            <div class="input-box-calculo">
+              <input id="dias" type="number" value="0" />
+              <span>dias</span>
+            </div>
+          </div>
+        </div>
+
+        <hr />
+
+        <p class="exemplos-calculo">Exemplos rápidos:</p>
+
+        <div class="botoes-calculo">
+          <button data-horas="8.4">8.4h = 1d</button>
+          <button data-horas="16.8">16.8h = 2d</button>
+          <button data-horas="42">42h = 5d</button>
+          <button data-horas="84">84h = 10d</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
