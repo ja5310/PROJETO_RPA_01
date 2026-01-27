@@ -873,6 +873,9 @@ hr {
 .botoes-calculo button:hover {
   background: #e2e4e8;
 }
+.btn-back-calculo {
+  display: none;
+}
 
 /* =========================
     MOBILE (até 768px)
@@ -1340,6 +1343,46 @@ hr {
   /* Links */
   .footer-link {
     font-size: 13px;
+  }
+
+  .conteiner-calculo {
+    margin: 0;
+    min-height: auto;
+    background: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .inputs-calculo {
+    display: flex;
+    gap: 24px;
+    margin-top: 25px;
+    flex-direction: column;
+  }
+  .card-calculo {
+    width: 670px;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 18px;
+    box-shadow: 0 0 0 1px #e6e6e6;
+    margin: 9px;
+  }
+  .botoes-calculo {
+    display: flex;
+    gap: 14px;
+    flex-direction: column;
+  }
+  .btn-back-calculo {
+    font-size: 24px;
+    color: #1ac2ff;
+    margin: 20px 0 20px 0;
+    padding: 12px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    text-decoration: none;
+    transition: all 0.2s;
   }
 }
 /* =========================
