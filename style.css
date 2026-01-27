@@ -8,6 +8,17 @@
 body {
   min-height: 100vh;
 }
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
 
 /* BACKGROUND */
 .background-home {
@@ -296,11 +307,12 @@ h4 {
 .conteiner-values {
   position: relative;
   display: inline-block;
-  background-color: #006fb9;
+  background: linear-gradient(180deg, #006fb9, #1992ca, #006fb9);
   overflow: visible;
   padding: 5px 0px 10px 0px;
   width: 100%;
   height: auto;
+  margin-bottom: 15px;
 }
 .sub-background {
   display: flex;
@@ -387,7 +399,9 @@ h4 {
   top: 10px;
   width: 100%;
   height: 90%;
-  background-color: #006fb9;
+  background: linear-gradient(270deg, #006fb9, #1992ca, #006fb9);
+  background-size: 800% 800%;
+  animation: gradientAnimation 10s ease infinite;
   z-index: -1; /* fica atrás do azul */
 }
 
@@ -425,7 +439,7 @@ h4 {
 
 .stats-container {
   width: 100%;
-  background: linear-gradient(180deg, #006fb9, #1992ca);
+  background: linear-gradient(180deg, #006fb9, #1992ca, #006fb9);
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -762,15 +776,16 @@ input[type="radio"] {
 .conteiner-calculo {
   margin: 0;
   min-height: 100vh;
-  background: #ffffff;
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 1;
 }
 
 .card-calculo {
+  position: relative;
   width: 670px;
-  background: #ffffff;
+  background: #000000;
   padding: 32px;
   border-radius: 18px;
   box-shadow: 0 0 0 1px #e6e6e6;
@@ -784,17 +799,19 @@ input[type="radio"] {
 
 .titulo-calculo h1 {
   font-size: 20px;
+  color: #ffffff;
   font-weight: 600;
   margin: 0;
 }
 
 .icone-calculo {
   font-size: 22px;
+  color: white;
 }
 
 .subtitulo-calculo {
   margin-top: 6px;
-  color: #6b7280;
+  color: #ffffff;
   font-size: 14px;
 }
 
@@ -802,6 +819,7 @@ input[type="radio"] {
   display: flex;
   gap: 24px;
   margin-top: 25px;
+  color: #ffffff;
 }
 
 .campo-calculo {
@@ -833,8 +851,8 @@ input[type="radio"] {
 }
 
 .input-box-calculo:focus-within {
-  border-color: #c7ff00;
-  box-shadow: 0 0 0 2px rgb(200, 255, 0);
+  border-color: #41f5ff;
+  box-shadow: 0 0 0 2px rgb(51, 222, 249);
 }
 .input-box-calculo span {
   color: #6b7280;
@@ -849,6 +867,7 @@ hr {
 }
 
 .exemplos-calculo {
+  color: white;
   font-size: 14px;
   font-weight: 600;
   margin-bottom: 12px;
@@ -860,11 +879,12 @@ hr {
 }
 
 .botoes-calculo button {
+  color: white;
   flex: 1;
   padding: 10px;
   border-radius: 10px;
   border: none;
-  background: #eef0f3;
+  background: #2196f3f0;
   font-size: 14px;
   cursor: pointer;
   transition: 0.2s;
@@ -872,9 +892,28 @@ hr {
 
 .botoes-calculo button:hover {
   background: #e2e4e8;
+  color: #000;
 }
 .btn-back-calculo {
   display: none;
+}
+.logo-card {
+  position: fixed;
+  background: #000;
+  bottom: 74px; /* Distância do topo */
+  height: 100px; /* Ajuste o tamanho conforme sua logo */
+  width: auto;
+  object-fit: contain;
+}
+#particles-js {
+  position: fixed; /* Fixa na tela toda */
+  width: 100%;
+  height: 100%;
+  background-color: #000000; /* Cor de fundo escura igual à imagem */
+  z-index: -1; /* Garante que fique atrás de tudo */
+  top: 0;
+  left: 0;
+  display: block !important;
 }
 
 /* =========================
@@ -1346,9 +1385,8 @@ hr {
   }
 
   .conteiner-calculo {
-    margin: 0;
+    margin-top: 50px;
     min-height: auto;
-    background: #ffffff;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1362,7 +1400,7 @@ hr {
   }
   .card-calculo {
     width: 670px;
-    background: #ffffff;
+
     padding: 20px;
     border-radius: 18px;
     box-shadow: 0 0 0 1px #e6e6e6;
@@ -1373,16 +1411,9 @@ hr {
     gap: 14px;
     flex-direction: column;
   }
-  .btn-back-calculo {
-    font-size: 24px;
-    color: #1ac2ff;
-    margin: 20px 0 20px 0;
-    padding: 12px 24px;
-    display: flex;
-    align-items: center;
-    justify-content: left;
-    text-decoration: none;
-    transition: all 0.2s;
+  .logo-card {
+    height: 150px;
+    bottom: 10vh;
   }
 }
 /* =========================

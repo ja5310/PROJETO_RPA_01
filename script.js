@@ -145,3 +145,54 @@ if (campoNascimento && typeof flatpickr !== "undefined") {
     animate: true,
   });
 }
+
+/* ============================
+   FUNDO ANIMADO (PARTICLES.JS)
+============================ */
+
+if (document.getElementById("particles-js")) {
+  particlesJS("particles-js", {
+    particles: {
+      number: { value: 100, density: { enable: true, value_area: 800 } },
+      color: { value: "#00e5ff" },
+      shape: {
+        type: "polygon",
+        polygon: { nb_sides: 6 }, // Formato de Hexágono
+      },
+      opacity: {
+        value: 0.3,
+        random: true,
+        anim: { enable: true, speed: 1, opacity_min: 0.1, sync: false },
+      },
+      size: {
+        value: 10,
+        random: true,
+        anim: { enable: false, speed: 100, size_min: 0.9, sync: false },
+      },
+      line_linked: {
+        enable: true,
+        distance: 150,
+        color: "#00e1ff",
+        opacity: 0.5,
+        width: 1,
+      },
+      move: {
+        enable: true,
+        speed: 2,
+        direction: "none",
+        random: false,
+        straight: false,
+        out_mode: "out",
+        bounce: true,
+      },
+    },
+    interactivity: {
+      detect_on: "canvas",
+      events: {
+        onhover: { enable: true, mode: "grab" },
+        onclick: { enable: true, mode: "push" },
+      },
+    },
+    retina_detect: true,
+  });
+}
