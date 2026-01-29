@@ -44,7 +44,7 @@ if (counters.length > 0) {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           startCounter(entry.target);
-          observer.unobserve(entry.target); // roda só uma vez
+          observer.observe(entry.target); // roda só uma vez
         }
       });
     },
@@ -72,7 +72,7 @@ const inputHoras = document.getElementById("horas");
 const inputDias = document.getElementById("dias");
 const botoes = document.querySelectorAll(".botoes-calculo button");
 
-const HORAS_POR_DIA = 8.4;
+const HORAS_POR_DIA = 8.8;
 
 if (inputHoras && inputDias) {
   // Horas → Dias
