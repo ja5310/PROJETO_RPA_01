@@ -961,7 +961,7 @@ hr {
     z-index: 2100; /* Um pouco acima do header */
   }
   .logo {
-    height: 45px;
+    height: 20px;
   }
 
   .header-right {
@@ -1378,7 +1378,7 @@ hr {
   .form-header h2 {
     font-size: 17px;
     text-align: center; /* Isso centraliza o texto e o emoji */
-    width: 100%; /* Garante que ele ocupe a largura total */
+    width: 100%;
   }
 
   .form-header p {
@@ -1390,6 +1390,9 @@ hr {
     font-size: 13px;
   }
 
+  .btn-back {
+    display: none;
+  }
   .conteiner-calculo {
     margin-top: 3px;
     min-height: auto;
