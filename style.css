@@ -4,6 +4,17 @@
   box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
 }
+/* Remove o fundo azul e mantém a cor que você quiser */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  /* Cria uma sombra interna branca (ou da cor do fundo do seu input) */
+  -webkit-box-shadow: 0 0 0 30px white inset !important;
+
+  /* Se quiser mudar a cor do texto que o navegador preenche: */
+  -webkit-text-fill-color: #333 !important;
+}
 
 body {
   min-height: 100vh;
@@ -83,14 +94,13 @@ body {
   font-size: 16px;
   color: #fff;
   cursor: pointer;
-  transition: opacity 0.5s ease-in-out;
+  transition: background-color 0.3s ease;
 }
 
-button:hover {
+.button-header:hover {
   color: #000;
-  background: #c7ff00;
+  background-color: #afc4d1;
   font-weight: 700;
-  opacity: 0.7;
 }
 
 /* HERO */
@@ -161,14 +171,13 @@ button:hover {
   font-weight: 700;
   cursor: pointer;
   border-radius: 20px;
-  transition: opacity 0.5s ease-in-out;
+  transition: background-color 0.3s ease;
 }
 
 .hero-btn:hover {
-  color: #000;
-  background: #c7ff00;
+  color: #000000;
+  background-color: #afc4d1;
   font-weight: 700;
-  opacity: 0.7;
 }
 
 /* IMAGEM DIREITA */
@@ -516,28 +525,6 @@ h4 {
   max-width: 720px;
   margin: 0 auto 40px auto;
   opacity: 0.95;
-}
-
-/* BOTÃO */
-.hero-information button {
-  background: #c7ff00;
-  color: #000;
-  border: none;
-  padding: 14px 36px;
-  font-size: 14px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  cursor: pointer;
-  border-radius: 20px;
-  transition: all 0.3s ease;
-}
-
-/* HOVER DO BOTÃO */
-.hero-information button:hover {
-  color: white;
-  background: #006fb9;
-  transform: translateY(-2px);
 }
 
 /* Outra Pagina*/

@@ -197,3 +197,16 @@ if (document.getElementById("particles-js") && !window.particlesInitialized) {
     retina_detect: true,
   });
 }
+
+const form = document.getElementById("formulario_cadastro");
+const inputs = form.querySelectorAll("input, textarea, select");
+const checarValor = ({ target }) => {
+  if (target.value.trim() !== "") {
+    target.style.border = "2px solid #c7ff00"; // preenchido: borda verde
+  } else {
+    target.style.border = "1px solid #ccc"; // vazio: borda padrão
+  }
+};
+
+// Adiciona o evento 'input' para cada campo
+inputs.forEach((input) => input.addEventListener("input", checarValor));
