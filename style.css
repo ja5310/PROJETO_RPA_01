@@ -74,6 +74,7 @@ body {
 }
 
 .button-header {
+  font-weight: 700;
   background: #006fb9;
   border-radius: 20px;
   width: 130px;
@@ -82,12 +83,14 @@ body {
   font-size: 16px;
   color: #fff;
   cursor: pointer;
+  transition: opacity 0.5s ease-in-out;
 }
 
 button:hover {
   color: #000;
   background: #c7ff00;
-  font-weight: 500;
+  font-weight: 700;
+  opacity: 0.7;
 }
 
 /* HERO */
@@ -150,19 +153,22 @@ button:hover {
 }
 
 .hero-btn {
+  color: white;
   margin-top: 30px;
   padding: 14px 32px;
-  background: #c7ff00;
+  background: #006fb9;
   border: none;
   font-weight: 700;
   cursor: pointer;
   border-radius: 20px;
+  transition: opacity 0.5s ease-in-out;
 }
 
 .hero-btn:hover {
-  color: white;
-  background: #006fb9;
-  font-weight: 500;
+  color: #000;
+  background: #c7ff00;
+  font-weight: 700;
+  opacity: 0.7;
 }
 
 /* IMAGEM DIREITA */
@@ -1016,7 +1022,8 @@ hr {
     margin: 24px auto 0;
     padding: 14px 0;
     border-radius: 25px;
-    background-color: #c7ff00;
+    font-weight: 700;
+    background: #006fb9;
   }
 
   /* IMAGEM */
@@ -1476,4 +1483,26 @@ hr {
 /* MENU ABERTO */
 .menu-mobile.active {
   right: 0;
+}
+/* O backdrop começa invisível e sem ocupar espaço */
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5); /* Cor preta com 50% de transparência */
+  z-index: 9; /* Garante que fique acima do conteúdo, mas abaixo do menu */
+  display: none; /* Escondido por padrão */
+}
+
+/* Quando o menu está ativo, mostramos o backdrop */
+.backdrop.active {
+  display: block;
+}
+
+/* Certifique-se que seu menu mobile tenha um z-index maior que o do backdrop */
+.menu-mobile {
+  z-index: 10;
+  /* ... seu estilo atual ... */
 }

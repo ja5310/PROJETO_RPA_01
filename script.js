@@ -3,10 +3,24 @@
 ============================ */
 const toggle = document.getElementById("menu-toggle");
 const menu = document.getElementById("menu-mobile");
+const backdrop = document.getElementById("menu-backdrop");
 
-if (toggle && menu) {
-  toggle.addEventListener("click", () => {
+if (toggle && menu && backdrop) {
+  // Função para alternar o estado (abrir/fechar)
+  const toggleMenu = () => {
     menu.classList.toggle("active");
+    backdrop.classList.toggle("active");
+  };
+
+  // Abre ou fecha ao clicar no ícone hambúrguer
+  toggle.addEventListener("click", toggleMenu);
+
+  // Fecha o menu ao clicar em qualquer lugar da área escura (o backdrop)
+  backdrop.addEventListener("click", toggleMenu);
+
+  // Opcional: Fecha o menu ao clicar em um link (útil para navegação na mesma página)
+  menu.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", toggleMenu);
   });
 }
 
@@ -57,13 +71,13 @@ if (counters.length > 0) {
 /* ============================
    BOTÃO CADASTRO
 ============================ */
-const btnCadastro = document.querySelector(".hero-btn");
+const botoesCadastro = document.querySelectorAll(".hero-btn");
 
-if (btnCadastro) {
-  btnCadastro.addEventListener("click", () => {
+botoesCadastro.forEach((botao) => {
+  botao.addEventListener("click", () => {
     window.location.href = "cadastro.html";
   });
-}
+});
 
 /* ============================
    CONVERSOR HORAS ↔ DIAS
