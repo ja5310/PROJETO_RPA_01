@@ -208,5 +208,4 @@ const checarValor = ({ target }) => {
   }
 };
 
-// Adiciona o evento 'input' para cada campo
 inputs.forEach((input) => input.addEventListener("input", checarValor));

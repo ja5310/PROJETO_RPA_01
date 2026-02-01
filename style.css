@@ -4,17 +4,6 @@
   box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
 }
-/* Remove o fundo azul e mantém a cor que você quiser */
-input:-webkit-autofill,
-input:-webkit-autofill:hover,
-input:-webkit-autofill:focus,
-input:-webkit-autofill:active {
-  /* Cria uma sombra interna branca (ou da cor do fundo do seu input) */
-  -webkit-box-shadow: 0 0 0 30px white inset !important;
-
-  /* Se quiser mudar a cor do texto que o navegador preenche: */
-  -webkit-text-fill-color: #333 !important;
-}
 
 body {
   min-height: 100vh;
@@ -913,6 +902,18 @@ hr {
   top: 0;
   left: 0;
   display: block !important;
+}
+
+/* Remove o fundo azul e mantém a cor que você quiser */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  /* Cria uma sombra interna branca (ou da cor do fundo do seu input) */
+  -webkit-box-shadow: 0 0 0 30px white inset !important;
+
+  /* Se quiser mudar a cor do texto que o navegador preenche: */
+  -webkit-text-fill-color: #333 !important;
 }
 
 /* =========================
