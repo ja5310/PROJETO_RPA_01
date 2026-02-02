@@ -280,3 +280,43 @@ if (form) {
     });
   });
 }
+
+/* ============================
+   VALIDAÇÃO DE SENHAS
+============================ */
+const inputSenha = document.getElementById("senha");
+const inputConfirmar = document.getElementById("confirmar_senha");
+
+const validarSenhasIguais = () => {
+  if (!inputSenha || !inputConfirmar) return true;
+
+  const senha = inputSenha.value;
+  const confirmar = inputConfirmar.value;
+
+  // Se algum estiver vazio, não valida ainda
+  if (!senha || !confirmar) {
+    inputSenha.style.border = "1px solid #ccc";
+    inputConfirmar.style.border = "1px solid #ccc";
+    return false;
+  }
+
+  const iguais = senha === confirmar && senha.length >= 4;
+
+  const cor = iguais ? "2px solid #00afefa1" : "2px solid #ff4d4d";
+  inputSenha.style.border = cor;
+  inputConfirmar.style.border = cor;
+
+  return iguais;
+};
+
+inputSenha?.addEventListener("input", validarSenhasIguais);
+inputConfirmar?.addEventListener("input", validarSenhasIguais);
+
+form?.addEventListener("submit", (e) => {
+  const senhasOk = validarSenhasIguais();
+
+  if (!senhasOk) {
+    e.preventDefault();
+    alert("As senhas não conferem ou são muito curtas.");
+  }
+});
