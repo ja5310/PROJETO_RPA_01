@@ -200,11 +200,36 @@ if (document.getElementById("particles-js") && !window.particlesInitialized) {
 
 const form = document.getElementById("formulario_cadastro");
 const inputs = form.querySelectorAll("input, textarea, select");
+
+const validarNome = (valor) => /^[a-zA-ZÀ-ÿ\s]+$/.test(valor); // Só letras e espaços
+const validarEmail = (valor) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(valor); // Formato email@dominio.com
+const validarDocumento = (valor) => /^[0-9./-]{11,18}$/.test(valor); // Apenas números e caracteres de CPF/CNPJ
+
 const checarValor = ({ target }) => {
-  if (target.value.trim() !== "") {
-    target.style.border = "2px solid #c7ff00"; // preenchido: borda verde
+  const valor = target.value.trim();
+  let eValido = false;
+
+  if (valor === "") {
+    target.style.border = "1px solid #ccc";
+    return;
+  }
+  if (target.name === "nome") {
+    eValido = validarNome(valor);
+  } else if (target.name === "email") {
+    eValido = validarEmail(valor);
+  } else if (target.name === "documento") {
+    eValido = validarDocumento(valor);
+  } else if (target.name === "telefone") {
+    eValido = validarDocumento(valor);
   } else {
-    target.style.border = "1px solid #ccc"; // vazio: borda padrão
+    eValido = valor.length > 0;
+  }
+
+  // Aplica a cor baseada na validação
+  if (eValido) {
+    target.style.border = "2px solid #00afefa1";
+  } else {
+    target.style.border = "2px solid #ff4d4d";
   }
 };
 
