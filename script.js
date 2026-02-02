@@ -6,19 +6,14 @@ const menu = document.getElementById("menu-mobile");
 const backdrop = document.getElementById("menu-backdrop");
 
 if (toggle && menu && backdrop) {
-  // Função para alternar o estado (abrir/fechar)
   const toggleMenu = () => {
     menu.classList.toggle("active");
     backdrop.classList.toggle("active");
   };
 
-  // Abre ou fecha ao clicar no ícone hambúrguer
   toggle.addEventListener("click", toggleMenu);
-
-  // Fecha o menu ao clicar em qualquer lugar da área escura (o backdrop)
   backdrop.addEventListener("click", toggleMenu);
 
-  // Opcional: Fecha o menu ao clicar em um link (útil para navegação na mesma página)
   menu.querySelectorAll("a").forEach((link) => {
     link.addEventListener("click", toggleMenu);
   });
@@ -40,10 +35,7 @@ if (counters.length > 0) {
       current += increment;
 
       if (current < target) {
-        const value =
-          target % 1 === 0 ? Math.ceil(current) : current.toFixed(1);
-
-        counter.innerText = `${prefix}${value}`;
+        counter.innerText = `${prefix}${Math.ceil(current)}`;
         requestAnimationFrame(updateCounter);
       } else {
         counter.innerText = `${prefix}${target}`;
@@ -58,7 +50,7 @@ if (counters.length > 0) {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           startCounter(entry.target);
-          observer.observe(entry.target); // roda só uma vez
+          observer.unobserve(entry.target);
         }
       });
     },
@@ -71,9 +63,7 @@ if (counters.length > 0) {
 /* ============================
    BOTÃO CADASTRO
 ============================ */
-const botoesCadastro = document.querySelectorAll(".hero-btn");
-
-botoesCadastro.forEach((botao) => {
+document.querySelectorAll(".hero-btn").forEach((botao) => {
   botao.addEventListener("click", () => {
     window.location.href = "cadastro.html";
   });
@@ -85,37 +75,22 @@ botoesCadastro.forEach((botao) => {
 const inputHoras = document.getElementById("horas");
 const inputDias = document.getElementById("dias");
 const botoes = document.querySelectorAll(".botoes-calculo button");
-
 const HORAS_POR_DIA = 8.8;
 
 if (inputHoras && inputDias) {
-  // Horas → Dias
   inputHoras.addEventListener("input", () => {
     const horas = parseFloat(inputHoras.value);
-
-    if (!isNaN(horas)) {
-      inputDias.value = (horas / HORAS_POR_DIA).toFixed(2);
-    } else {
-      inputDias.value = "";
-    }
+    inputDias.value = !isNaN(horas) ? (horas / HORAS_POR_DIA).toFixed(2) : "";
   });
 
-  // Dias → Horas
   inputDias.addEventListener("input", () => {
     const dias = parseFloat(inputDias.value);
-
-    if (!isNaN(dias)) {
-      inputHoras.value = (dias * HORAS_POR_DIA).toFixed(2);
-    } else {
-      inputHoras.value = "";
-    }
+    inputHoras.value = !isNaN(dias) ? (dias * HORAS_POR_DIA).toFixed(2) : "";
   });
 
-  // Botões rápidos
   botoes.forEach((botao) => {
     botao.addEventListener("click", () => {
       const horas = parseFloat(botao.dataset.horas);
-
       if (!isNaN(horas)) {
         inputHoras.value = horas;
         inputDias.value = (horas / HORAS_POR_DIA).toFixed(2);
@@ -123,47 +98,36 @@ if (inputHoras && inputDias) {
     });
   });
 }
+
 /* ============================
-   TELA - CADASTRO
+   PLACEHOLDER CPF / CNPJ
 ============================ */
-const opcoesDoc = document.querySelectorAll('input[name="perfil"]');
+document.querySelectorAll('input[name="perfil"]').forEach((radio) => {
+  radio.addEventListener("change", () => {
+    const doc = document.getElementById("documento");
+    if (!doc) return;
 
-if (opcoesDoc.length > 0) {
-  opcoesDoc.forEach((radio) => {
-    radio.addEventListener("change", () => {
-      const inputDoc = document.getElementById("documento");
-
-      if (!inputDoc) return;
-
-      if (radio.value === "cliente") {
-        inputDoc.placeholder = "Nº do seu CPF *";
-      } else if (radio.value === "colaborador") {
-        inputDoc.placeholder = "Nº do seu CNPJ *";
-      } else {
-        inputDoc.placeholder = "";
-      }
-    });
+    doc.placeholder =
+      radio.value === "cliente"
+        ? "Nº do seu CPF *"
+        : "Nº do seu CNPJ *";
   });
-}
+});
 
 /* ============================
-   CALENDÁRIO (FLATPICKR)
+   FLATPICKR
 ============================ */
-const campoNascimento = document.getElementById("nascimento");
-
-if (campoNascimento && typeof flatpickr !== "undefined") {
+if (document.getElementById("nascimento") && typeof flatpickr !== "undefined") {
   flatpickr("#nascimento", {
     locale: "pt",
     dateFormat: "d/m/Y",
     disableMobile: true,
-    animate: true,
   });
 }
 
 /* ============================
-   FUNDO ANIMADO (PARTICLES.JS)
+   PARTICLES
 ============================ */
-
 if (document.getElementById("particles-js") && !window.particlesInitialized) {
   window.particlesInitialized = true;
 
@@ -172,65 +136,147 @@ if (document.getElementById("particles-js") && !window.particlesInitialized) {
       number: { value: 100, density: { enable: true, value_area: 500 } },
       color: { value: "#00afef" },
       shape: { type: "edge" },
-      opacity: {
-        value: 0.6,
-        random: true,
-        anim: { enable: true, speed: 0.1, opacity_min: 0.1 },
-      },
+      opacity: { value: 0.6, random: true },
       size: { value: 50, random: true },
       line_linked: { enable: false },
-      move: {
-        enable: true,
-        speed: 0.2,
-        direction: "none",
-        random: false,
-        straight: false,
-        out_mode: "out",
-      },
-    },
-    interactivity: {
-      events: {
-        onhover: { enable: true, mode: "grab" },
-        onclick: { enable: true, mode: "push" },
-      },
+      move: { enable: true, speed: 0.2 },
     },
     retina_detect: true,
   });
 }
 
-const form = document.getElementById("formulario_cadastro");
-const inputs = form.querySelectorAll("input, textarea, select");
+/* ============================
+   MÁSCARAS
+============================ */
+const inputDocumento = document.getElementById("documento");
+const inputTelefone = document.getElementById("telefone");
 
-const validarNome = (valor) => /^[a-zA-ZÀ-ÿ\s]+$/.test(valor); // Só letras e espaços
-const validarEmail = (valor) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(valor); // Formato email@dominio.com
-const validarDocumento = (valor) => /^[0-9./-]{11,18}$/.test(valor); // Apenas números e caracteres de CPF/CNPJ
+if (inputDocumento) {
+  inputDocumento.addEventListener("input", () => {
+    let v = inputDocumento.value.replace(/\D/g, "");
 
-const checarValor = ({ target }) => {
-  const valor = target.value.trim();
-  let eValido = false;
+    if (v.length <= 11) {
+      v = v
+        .replace(/(\d{3})(\d)/, "$1.$2")
+        .replace(/(\d{3})(\d)/, "$1.$2")
+        .replace(/(\d{3})(\d{1,2})$/, "$1-$2");
+    } else {
+      v = v
+        .replace(/^(\d{2})(\d)/, "$1.$2")
+        .replace(/^(\d{2})\.(\d{3})(\d)/, "$1.$2.$3")
+        .replace(/\.(\d{3})(\d)/, ".$1/$2")
+        .replace(/(\d{4})(\d)/, "$1-$2");
+    }
 
-  if (valor === "") {
-    target.style.border = "1px solid #ccc";
-    return;
-  }
-  if (target.name === "nome") {
-    eValido = validarNome(valor);
-  } else if (target.name === "email") {
-    eValido = validarEmail(valor);
-  } else if (target.name === "documento") {
-    eValido = validarDocumento(valor);
-  } else if (target.name === "telefone") {
-    eValido = validarDocumento(valor);
-  } else {
-    eValido = valor.length > 0;
-  }
+    inputDocumento.value = v;
+  });
+}
 
-  // Aplica a cor baseada na validação
-  if (eValido) {
-    target.style.border = "2px solid #00afefa1";
-  } else {
-    target.style.border = "2px solid #ff4d4d";
-  }
+if (inputTelefone) {
+  inputTelefone.addEventListener("input", () => {
+    let v = inputTelefone.value.replace(/\D/g, "");
+    if (v.length > 11) v = v.slice(0, 11);
+
+    v = v
+      .replace(/^(\d{2})(\d)/, "($1) $2")
+      .replace(v.length === 11
+        ? /(\d{5})(\d{4})$/
+        : /(\d{4})(\d{4})$/,
+        "$1-$2");
+
+    inputTelefone.value = v;
+  });
+}
+
+/* ============================
+   VALIDAÇÕES
+============================ */
+const validarCPF = (cpf) => {
+  cpf = cpf.replace(/\D/g, "");
+  if (cpf.length !== 11 || /^(\d)\1+$/.test(cpf)) return false;
+
+  let soma = 0;
+  for (let i = 0; i < 9; i++) soma += cpf[i] * (10 - i);
+  let r = (soma * 10) % 11;
+  if (r === 10) r = 0;
+  if (r != cpf[9]) return false;
+
+  soma = 0;
+  for (let i = 0; i < 10; i++) soma += cpf[i] * (11 - i);
+  r = (soma * 10) % 11;
+  if (r === 10) r = 0;
+
+  return r == cpf[10];
 };
 
-inputs.forEach((input) => input.addEventListener("input", checarValor));
+const validarCNPJ = (cnpj) => {
+  cnpj = cnpj.replace(/\D/g, "");
+  if (cnpj.length !== 14) return false;
+
+  let t = cnpj.length - 2;
+  let n = cnpj.substring(0, t);
+  let d = cnpj.substring(t);
+  let s = 0;
+  let p = t - 7;
+
+  for (let i = t; i >= 1; i--) {
+    s += n[t - i] * p--;
+    if (p < 2) p = 9;
+  }
+
+  let r = s % 11 < 2 ? 0 : 11 - (s % 11);
+  if (r != d[0]) return false;
+
+  t++;
+  n = cnpj.substring(0, t);
+  s = 0;
+  p = t - 7;
+
+  for (let i = t; i >= 1; i--) {
+    s += n[t - i] * p--;
+    if (p < 2) p = 9;
+  }
+
+  r = s % 11 < 2 ? 0 : 11 - (s % 11);
+  return r == d[1];
+};
+
+const validarTelefone = (tel) =>
+  /^\(\d{2}\)\s\d{4,5}-\d{4}$/.test(tel);
+
+/* ============================
+   VALIDAÇÃO VISUAL
+============================ */
+const form = document.getElementById("formulario_cadastro");
+
+if (form) {
+  form.querySelectorAll("input").forEach((input) => {
+    input.addEventListener("input", ({ target }) => {
+      const v = target.value.trim();
+      let ok = false;
+
+      if (!v) {
+        target.style.border = "1px solid #ccc";
+        return;
+      }
+
+      if (target.name === "nome") ok = /^[A-Za-zÀ-ÿ\s]+$/.test(v);
+      else if (target.name === "email")
+        ok = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+      else if (target.name === "documento") {
+        const limpo = v.replace(/\D/g, "");
+        ok =
+          limpo.length === 11
+            ? validarCPF(v)
+            : limpo.length === 14
+            ? validarCNPJ(v)
+            : false;
+      } else if (target.name === "telefone") ok = validarTelefone(v);
+      else ok = true;
+
+      target.style.border = ok
+        ? "2px solid #00afefa1"
+        : "2px solid #ff4d4d";
+    });
+  });
+}
