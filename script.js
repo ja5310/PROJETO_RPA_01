@@ -108,9 +108,7 @@ document.querySelectorAll('input[name="perfil"]').forEach((radio) => {
     if (!doc) return;
 
     doc.placeholder =
-      radio.value === "cliente"
-        ? "Nº do seu CPF *"
-        : "Nº do seu CNPJ *";
+      radio.value === "cliente" ? "Nº do seu CPF *" : "Nº do seu CNPJ *";
   });
 });
 
@@ -179,10 +177,10 @@ if (inputTelefone) {
 
     v = v
       .replace(/^(\d{2})(\d)/, "($1) $2")
-      .replace(v.length === 11
-        ? /(\d{5})(\d{4})$/
-        : /(\d{4})(\d{4})$/,
-        "$1-$2");
+      .replace(
+        v.length === 11 ? /(\d{5})(\d{4})$/ : /(\d{4})(\d{4})$/,
+        "$1-$2",
+      );
 
     inputTelefone.value = v;
   });
@@ -241,8 +239,7 @@ const validarCNPJ = (cnpj) => {
   return r == d[1];
 };
 
-const validarTelefone = (tel) =>
-  /^\(\d{2}\)\s\d{4,5}-\d{4}$/.test(tel);
+const validarTelefone = (tel) => /^\(\d{2}\)\s\d{4,5}-\d{4}$/.test(tel);
 
 /* ============================
    VALIDAÇÃO VISUAL
@@ -269,14 +266,12 @@ if (form) {
           limpo.length === 11
             ? validarCPF(v)
             : limpo.length === 14
-            ? validarCNPJ(v)
-            : false;
+              ? validarCNPJ(v)
+              : false;
       } else if (target.name === "telefone") ok = validarTelefone(v);
       else ok = true;
 
-      target.style.border = ok
-        ? "2px solid #00afefa1"
-        : "2px solid #ff4d4d";
+      target.style.border = ok ? "2px solid #00afefa1" : "2px solid #ff4d4d";
     });
   });
 }
@@ -286,6 +281,7 @@ if (form) {
 ============================ */
 const inputSenha = document.getElementById("senha");
 const inputConfirmar = document.getElementById("confirmar_senha");
+const infSenha = document.querySelector("#inf_senha");
 
 const validarSenhasIguais = () => {
   if (!inputSenha || !inputConfirmar) return true;
@@ -293,16 +289,25 @@ const validarSenhasIguais = () => {
   const senha = inputSenha.value;
   const confirmar = inputConfirmar.value;
 
-  // Se algum estiver vazio, não valida ainda
   if (!senha || !confirmar) {
     inputSenha.style.border = "1px solid #ccc";
     inputConfirmar.style.border = "1px solid #ccc";
+    infSenha.textContent = "";
     return false;
   }
 
   const iguais = senha === confirmar && senha.length >= 4;
 
-  const cor = iguais ? "2px solid #00afefa1" : "2px solid #ff4d4d";
+  let cor;
+
+  if (iguais) {
+    cor = "2px solid #00afefa1";
+    infSenha.textContent = "";
+  } else {
+    cor = "2px solid #ff4d4d";
+    infSenha.textContent = "Verifique sua senha";
+  }
+
   inputSenha.style.border = cor;
   inputConfirmar.style.border = cor;
 
