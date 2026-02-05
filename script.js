@@ -131,13 +131,13 @@ if (document.getElementById("particles-js") && !window.particlesInitialized) {
 
   particlesJS("particles-js", {
     particles: {
-      number: { value: 100, density: { enable: true, value_area: 500 } },
-      color: { value: "#00afef" },
+      number: { value: 100, density: { enable: false, value_area: 500 } },
+      color: { value: "#00516e" },
       shape: { type: "edge" },
       opacity: { value: 0.6, random: true },
       size: { value: 50, random: true },
       line_linked: { enable: false },
-      move: { enable: true, speed: 0.2 },
+      move: { enable: true, speed: 0.1 },
     },
     retina_detect: true,
   });
