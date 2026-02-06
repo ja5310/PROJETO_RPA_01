@@ -131,11 +131,31 @@ if (document.getElementById("particles-js") && !window.particlesInitialized) {
 
   particlesJS("particles-js", {
     particles: {
-      number: { value: 100, density: { enable: false, value_area: 500 } },
+      number: { value: 100, density: { enable: true, value_area: 500 } },
       color: { value: "#00516e" },
-      shape: { type: "edge" },
-      opacity: { value: 0.6, random: true },
-      size: { value: 50, random: true },
+      shape: {
+        type: "polygon",
+        polygon: {
+          nb_sides: 6,
+        },
+        stroke: {
+          width: 0.2,
+          color: "#a6dcee94",
+        },
+      },
+
+      opacity: {
+        value: 0.4,
+        random: true,
+        anim: {
+          enable: true,
+          speed: 0.1,
+          opacity_min: 0.07,
+          sync: false,
+        },
+      },
+
+      size: { value: 30, random: true },
       line_linked: { enable: false },
       move: { enable: true, speed: 0.1 },
     },
